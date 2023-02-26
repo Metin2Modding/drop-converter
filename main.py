@@ -22,6 +22,9 @@ class Helper:
 
     @staticmethod
     def output_filename():
+        if not os.path.isdir("output"):
+            os.mkdir("output")
+
         now = Helper.get_now()
         return f"output/drop{now.strftime('%m%d%Y%H%M%S')}.sql"
 
